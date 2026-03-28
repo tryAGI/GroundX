@@ -1,0 +1,20 @@
+#nullable enable
+
+namespace GroundX
+{
+    public partial interface IDocumentsClient
+    {
+        /// <summary>
+        /// ingest_local<br/>
+        /// Upload documents hosted on a local file system for ingestion into a GroundX bucket.<br/>
+        /// Interact with the "Request Body" below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::GroundX.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::GroundX.IngestResponse> DocumentIngestLocalAsync(
+
+            global::System.Collections.Generic.IList<global::GroundX.DocumentLocalIngestRequestItem> request,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}
