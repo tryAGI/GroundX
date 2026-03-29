@@ -1,6 +1,9 @@
 # Microsoft.Extensions.AI Integration
 
-GroundX provides `AIFunction` tools that can be used with any `Microsoft.Extensions.AI.IChatClient` to give AI agents access to RAG search, document ingestion, and bucket management capabilities.
+!!! tip "Cross-SDK comparison"
+    See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
+
+The GroundX SDK provides `AIFunction` tool wrappers compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai). These tools can be used with any `IChatClient` to give AI models access to GroundX's RAG search, document ingestion, and bucket management capabilities.
 
 ## Available Tools
 
