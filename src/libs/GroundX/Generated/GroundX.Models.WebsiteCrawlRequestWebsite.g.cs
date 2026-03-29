@@ -63,6 +63,10 @@ namespace GroundX
         /// the bucketId of the bucket which this website will be ingested to.<br/>
         /// Example: 123
         /// </param>
+        /// <param name="sourceUrl">
+        /// The URL from which the crawl is initiated.<br/>
+        /// Example: https://my.website.com
+        /// </param>
         /// <param name="cap">
         /// The maximum number of pages to crawl<br/>
         /// Example: 100
@@ -75,10 +79,6 @@ namespace GroundX
         /// Custom metadata which can be used to influence GroundX's search functionality. This data can be used to further hone GroundX search.<br/>
         /// Example: {"key":"value"}
         /// </param>
-        /// <param name="sourceUrl">
-        /// The URL from which the crawl is initiated.<br/>
-        /// Example: https://my.website.com
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,10 +90,10 @@ namespace GroundX
             object? searchData)
         {
             this.BucketId = bucketId;
-            this.SourceUrl = sourceUrl ?? throw new global::System.ArgumentNullException(nameof(sourceUrl));
             this.Cap = cap;
             this.Depth = depth;
             this.SearchData = searchData;
+            this.SourceUrl = sourceUrl ?? throw new global::System.ArgumentNullException(nameof(sourceUrl));
         }
 
         /// <summary>

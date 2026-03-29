@@ -45,8 +45,8 @@ namespace GroundX
         /// Initializes a new instance of the <see cref="ProcessStatusResponseIngest" /> class.
         /// </summary>
         /// <param name="processId"></param>
-        /// <param name="progress"></param>
         /// <param name="status"></param>
+        /// <param name="progress"></param>
         /// <param name="statusMessage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,8 +58,8 @@ namespace GroundX
             string? statusMessage)
         {
             this.ProcessId = processId;
-            this.Status = status;
             this.Progress = progress;
+            this.Status = status;
             this.StatusMessage = statusMessage;
         }
 
