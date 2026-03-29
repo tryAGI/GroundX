@@ -66,6 +66,7 @@ namespace GroundX
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupDetail" /> class.
         /// </summary>
+        /// <param name="groupId"></param>
         /// <param name="buckets">
         /// The content buckets associated with the group
         /// </param>
@@ -80,7 +81,6 @@ namespace GroundX
         /// The total file size of files contained in the content buckets associated with the group<br/>
         /// Example: 3.1GB
         /// </param>
-        /// <param name="groupId"></param>
         /// <param name="name"></param>
         /// <param name="updated">
         /// The data time when the group was last updated, in RFC3339 format<br/>
@@ -98,11 +98,11 @@ namespace GroundX
             string? name,
             global::System.DateTime? updated)
         {
-            this.GroupId = groupId;
             this.Buckets = buckets;
             this.Created = created;
             this.FileCount = fileCount;
             this.FileSize = fileSize;
+            this.GroupId = groupId;
             this.Name = name;
             this.Updated = updated;
         }

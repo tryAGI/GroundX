@@ -62,6 +62,10 @@ namespace GroundX
         /// the bucketId of the bucket which this remote file will be ingested to.<br/>
         /// Example: 1234
         /// </param>
+        /// <param name="sourceUrl">
+        /// The URL of the document being ingested by GroundX.<br/>
+        /// Example: https://my.source.url.com/file.txt
+        /// </param>
         /// <param name="fileName">
         /// The name of the file being ingested<br/>
         /// Example: my_file.txt
@@ -72,10 +76,6 @@ namespace GroundX
         /// <param name="searchData">
         /// Custom metadata which can be used to influence GroundX's search functionality. This data can be used to further hone GroundX search.<br/>
         /// Example: {"key":"value"}
-        /// </param>
-        /// <param name="sourceUrl">
-        /// The URL of the document being ingested by GroundX.<br/>
-        /// Example: https://my.source.url.com/file.txt
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -88,10 +88,10 @@ namespace GroundX
             object? searchData)
         {
             this.BucketId = bucketId;
-            this.SourceUrl = sourceUrl ?? throw new global::System.ArgumentNullException(nameof(sourceUrl));
             this.FileName = fileName;
             this.FileType = fileType;
             this.SearchData = searchData;
+            this.SourceUrl = sourceUrl ?? throw new global::System.ArgumentNullException(nameof(sourceUrl));
         }
 
         /// <summary>

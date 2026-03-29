@@ -88,10 +88,10 @@ namespace GroundX
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentDetail" /> class.
         /// </summary>
-        /// <param name="bucketId"></param>
         /// <param name="documentId">
         /// Unique system generated ID for the document
         /// </param>
+        /// <param name="bucketId"></param>
         /// <param name="fileName"></param>
         /// <param name="fileSize">
         /// The file size of the file stored in GroundX<br/>
@@ -128,8 +128,8 @@ namespace GroundX
             string? statusMessage,
             string? xrayUrl)
         {
-            this.DocumentId = documentId;
             this.BucketId = bucketId;
+            this.DocumentId = documentId;
             this.FileName = fileName;
             this.FileSize = fileSize;
             this.FileType = fileType;
