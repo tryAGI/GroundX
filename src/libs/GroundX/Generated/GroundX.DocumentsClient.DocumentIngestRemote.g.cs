@@ -259,7 +259,6 @@ namespace GroundX
             global::System.Collections.Generic.IList<global::GroundX.DocumentRemoteIngestRequestDocument> documents,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::GroundX.DocumentRemoteIngestRequest
             {
                 Documents = documents,

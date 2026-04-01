@@ -228,7 +228,6 @@ namespace GroundX
             string name,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::GroundX.BucketCreateRequest
             {
                 Name = name,
