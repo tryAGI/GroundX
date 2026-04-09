@@ -5,6 +5,25 @@ namespace GroundX
 {
     public partial class DocumentsClient
     {
+
+
+        private static readonly global::GroundX.EndPointSecurityRequirement s_DocumentIngestRemoteSecurityRequirement0 =
+            new global::GroundX.EndPointSecurityRequirement
+            {
+                Authorizations = new global::GroundX.EndPointAuthorizationRequirement[]
+                {                    new global::GroundX.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::GroundX.EndPointSecurityRequirement[] s_DocumentIngestRemoteSecurityRequirements =
+            new global::GroundX.EndPointSecurityRequirement[]
+            {                s_DocumentIngestRemoteSecurityRequirement0,
+            };
         partial void PrepareDocumentIngestRemoteArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::GroundX.DocumentRemoteIngestRequest request);
@@ -42,9 +61,15 @@ namespace GroundX
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::GroundX.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DocumentIngestRemoteSecurityRequirements,
+                operationName: "DocumentIngestRemoteAsync");
+
             var __pathBuilder = new global::GroundX.PathBuilder(
                 path: "/v1/ingest/documents/remote",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -54,7 +79,7 @@ namespace GroundX
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
