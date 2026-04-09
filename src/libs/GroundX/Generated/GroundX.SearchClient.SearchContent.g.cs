@@ -5,6 +5,25 @@ namespace GroundX
 {
     public partial class SearchClient
     {
+
+
+        private static readonly global::GroundX.EndPointSecurityRequirement s_SearchContentSecurityRequirement0 =
+            new global::GroundX.EndPointSecurityRequirement
+            {
+                Authorizations = new global::GroundX.EndPointAuthorizationRequirement[]
+                {                    new global::GroundX.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::GroundX.EndPointSecurityRequirement[] s_SearchContentSecurityRequirements =
+            new global::GroundX.EndPointSecurityRequirement[]
+            {                s_SearchContentSecurityRequirement0,
+            };
         partial void PrepareSearchContentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::GroundX.OneOf<int?, global::System.Guid?> id,
@@ -67,6 +86,12 @@ namespace GroundX
                 verbosity: ref verbosity,
                 request: request);
 
+
+            var __authorizations = global::GroundX.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SearchContentSecurityRequirements,
+                operationName: "SearchContentAsync");
+
             var __pathBuilder = new global::GroundX.PathBuilder(
                 path: $"/v1/search/{id}",
                 baseUri: HttpClient.BaseAddress); 
@@ -74,7 +99,7 @@ namespace GroundX
                 .AddOptionalParameter("n", n?.ToString())
                 .AddOptionalParameter("nextToken", nextToken)
                 .AddOptionalParameter("verbosity", verbosity?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -84,7 +109,7 @@ namespace GroundX
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

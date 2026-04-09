@@ -5,6 +5,25 @@ namespace GroundX
 {
     public partial class BucketsClient
     {
+
+
+        private static readonly global::GroundX.EndPointSecurityRequirement s_BucketListSecurityRequirement0 =
+            new global::GroundX.EndPointSecurityRequirement
+            {
+                Authorizations = new global::GroundX.EndPointAuthorizationRequirement[]
+                {                    new global::GroundX.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::GroundX.EndPointSecurityRequirement[] s_BucketListSecurityRequirements =
+            new global::GroundX.EndPointSecurityRequirement[]
+            {                s_BucketListSecurityRequirement0,
+            };
         partial void PrepareBucketListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? n,
@@ -44,13 +63,19 @@ namespace GroundX
                 n: ref n,
                 nextToken: ref nextToken);
 
+
+            var __authorizations = global::GroundX.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_BucketListSecurityRequirements,
+                operationName: "BucketListAsync");
+
             var __pathBuilder = new global::GroundX.PathBuilder(
                 path: "/v1/bucket",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("n", n?.ToString())
                 .AddOptionalParameter("nextToken", nextToken) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -60,7 +85,7 @@ namespace GroundX
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -6,6 +6,7 @@ namespace GroundX
     public sealed partial class GroundXClient
     {
         /// <inheritdoc cref="GroundXClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::GroundX.EndPointAuthorization}?, bool)"/>
+
         public GroundXClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

@@ -5,6 +5,25 @@ namespace GroundX
 {
     public partial class DocumentsClient
     {
+
+
+        private static readonly global::GroundX.EndPointSecurityRequirement s_DocumentsDeleteSecurityRequirement0 =
+            new global::GroundX.EndPointSecurityRequirement
+            {
+                Authorizations = new global::GroundX.EndPointAuthorizationRequirement[]
+                {                    new global::GroundX.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::GroundX.EndPointSecurityRequirement[] s_DocumentsDeleteSecurityRequirements =
+            new global::GroundX.EndPointSecurityRequirement[]
+            {                s_DocumentsDeleteSecurityRequirement0,
+            };
         partial void PrepareDocumentsDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::System.Guid> documentIds);
@@ -39,12 +58,18 @@ namespace GroundX
                 httpClient: HttpClient,
                 documentIds: documentIds);
 
+
+            var __authorizations = global::GroundX.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DocumentsDeleteSecurityRequirements,
+                operationName: "DocumentsDeleteAsync");
+
             var __pathBuilder = new global::GroundX.PathBuilder(
                 path: "/v1/ingest/documents",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("documentIds", documentIds, selector: static x => x.ToString()!, delimiter: ",", explode: false) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -54,7 +79,7 @@ namespace GroundX
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

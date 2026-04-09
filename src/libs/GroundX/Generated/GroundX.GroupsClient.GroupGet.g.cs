@@ -5,6 +5,25 @@ namespace GroundX
 {
     public partial class GroupsClient
     {
+
+
+        private static readonly global::GroundX.EndPointSecurityRequirement s_GroupGetSecurityRequirement0 =
+            new global::GroundX.EndPointSecurityRequirement
+            {
+                Authorizations = new global::GroundX.EndPointAuthorizationRequirement[]
+                {                    new global::GroundX.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::GroundX.EndPointSecurityRequirement[] s_GroupGetSecurityRequirements =
+            new global::GroundX.EndPointSecurityRequirement[]
+            {                s_GroupGetSecurityRequirement0,
+            };
         partial void PrepareGroupGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int groupId);
@@ -39,9 +58,15 @@ namespace GroundX
                 httpClient: HttpClient,
                 groupId: ref groupId);
 
+
+            var __authorizations = global::GroundX.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GroupGetSecurityRequirements,
+                operationName: "GroupGetAsync");
+
             var __pathBuilder = new global::GroundX.PathBuilder(
                 path: $"/v1/group/{groupId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -51,7 +76,7 @@ namespace GroundX
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

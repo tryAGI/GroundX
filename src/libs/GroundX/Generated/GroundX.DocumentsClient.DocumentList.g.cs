@@ -5,6 +5,25 @@ namespace GroundX
 {
     public partial class DocumentsClient
     {
+
+
+        private static readonly global::GroundX.EndPointSecurityRequirement s_DocumentListSecurityRequirement0 =
+            new global::GroundX.EndPointSecurityRequirement
+            {
+                Authorizations = new global::GroundX.EndPointAuthorizationRequirement[]
+                {                    new global::GroundX.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::GroundX.EndPointSecurityRequirement[] s_DocumentListSecurityRequirements =
+            new global::GroundX.EndPointSecurityRequirement[]
+            {                s_DocumentListSecurityRequirement0,
+            };
         partial void PrepareDocumentListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? n,
@@ -68,6 +87,12 @@ namespace GroundX
                 status: ref status,
                 nextToken: ref nextToken);
 
+
+            var __authorizations = global::GroundX.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DocumentListSecurityRequirements,
+                operationName: "DocumentListAsync");
+
             var __pathBuilder = new global::GroundX.PathBuilder(
                 path: "/v1/ingest/documents",
                 baseUri: HttpClient.BaseAddress); 
@@ -78,7 +103,7 @@ namespace GroundX
                 .AddOptionalParameter("sortOrder", sortOrder?.ToValueString())
                 .AddOptionalParameter("status", status?.ToValueString())
                 .AddOptionalParameter("nextToken", nextToken) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -88,7 +113,7 @@ namespace GroundX
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

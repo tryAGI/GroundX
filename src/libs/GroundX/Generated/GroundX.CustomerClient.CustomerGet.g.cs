@@ -5,6 +5,25 @@ namespace GroundX
 {
     public partial class CustomerClient
     {
+
+
+        private static readonly global::GroundX.EndPointSecurityRequirement s_CustomerGetSecurityRequirement0 =
+            new global::GroundX.EndPointSecurityRequirement
+            {
+                Authorizations = new global::GroundX.EndPointAuthorizationRequirement[]
+                {                    new global::GroundX.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "X-API-Key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::GroundX.EndPointSecurityRequirement[] s_CustomerGetSecurityRequirements =
+            new global::GroundX.EndPointSecurityRequirement[]
+            {                s_CustomerGetSecurityRequirement0,
+            };
         partial void PrepareCustomerGetArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareCustomerGetRequest(
@@ -33,9 +52,15 @@ namespace GroundX
             PrepareCustomerGetArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::GroundX.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CustomerGetSecurityRequirements,
+                operationName: "CustomerGetAsync");
+
             var __pathBuilder = new global::GroundX.PathBuilder(
                 path: "/v1/customer",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace GroundX
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
