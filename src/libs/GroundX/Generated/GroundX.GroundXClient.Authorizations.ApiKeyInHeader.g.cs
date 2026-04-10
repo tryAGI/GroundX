@@ -26,6 +26,7 @@ namespace GroundX
             Authorizations.Add(new global::GroundX.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApikeyXApiKey",
                 Location = "Header",
                 Name = "X-API-Key",
                 Value = apiKey,

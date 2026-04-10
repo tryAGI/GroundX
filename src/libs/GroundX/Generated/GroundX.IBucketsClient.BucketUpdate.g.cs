@@ -11,12 +11,14 @@ namespace GroundX
         /// </summary>
         /// <param name="bucketId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::GroundX.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::GroundX.BucketUpdateResponse> BucketUpdateAsync(
             int bucketId,
 
             global::GroundX.BucketUpdateRequest request,
+            global::GroundX.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// update<br/>
@@ -28,11 +30,13 @@ namespace GroundX
         /// The new name of the bucket being renamed.<br/>
         /// Example: your_bucket_name
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::GroundX.BucketUpdateResponse> BucketUpdateAsync(
             int bucketId,
             string newName,
+            global::GroundX.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

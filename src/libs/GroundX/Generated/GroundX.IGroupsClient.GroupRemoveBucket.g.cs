@@ -11,11 +11,13 @@ namespace GroundX
         /// </summary>
         /// <param name="groupId"></param>
         /// <param name="bucketId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::GroundX.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::GroundX.MessageResponse> GroupRemoveBucketAsync(
             int groupId,
             int bucketId,
+            global::GroundX.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

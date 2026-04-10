@@ -31,6 +31,9 @@ namespace GroundX
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::GroundX.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +43,7 @@ namespace GroundX
         /// <summary>
         /// 
         /// </summary>
-        public BucketsClient Buckets => new BucketsClient(HttpClient, authorizations: Authorizations)
+        public BucketsClient Buckets => new BucketsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -49,7 +52,7 @@ namespace GroundX
         /// <summary>
         /// 
         /// </summary>
-        public CustomerClient Customer => new CustomerClient(HttpClient, authorizations: Authorizations)
+        public CustomerClient Customer => new CustomerClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -58,7 +61,7 @@ namespace GroundX
         /// <summary>
         /// 
         /// </summary>
-        public DocumentsClient Documents => new DocumentsClient(HttpClient, authorizations: Authorizations)
+        public DocumentsClient Documents => new DocumentsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -67,7 +70,7 @@ namespace GroundX
         /// <summary>
         /// 
         /// </summary>
-        public GroupsClient Groups => new GroupsClient(HttpClient, authorizations: Authorizations)
+        public GroupsClient Groups => new GroupsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -76,7 +79,7 @@ namespace GroundX
         /// <summary>
         /// 
         /// </summary>
-        public HealthClient Health => new HealthClient(HttpClient, authorizations: Authorizations)
+        public HealthClient Health => new HealthClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -85,7 +88,7 @@ namespace GroundX
         /// <summary>
         /// 
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations)
+        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -104,11 +107,37 @@ namespace GroundX
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::GroundX.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the GroundXClient.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public GroundXClient(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::GroundX.EndPointAuthorization>? authorizations = null,
+            global::GroundX.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
+
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::GroundX.EndPointAuthorization>();
+            Options = options ?? new global::GroundX.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);
