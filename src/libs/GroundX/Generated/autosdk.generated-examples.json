@@ -1,0 +1,26 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "lookup",
+      "Slug": "document-lookup",
+      "Description": "lookup the document(s) associated with a processId, bucketId, groupId, or projectId.\n\nInteract with the \u0022Request Body\u0022 below to explore the arguments of this function. Enter your GroundX API key to send a request directly from this web page. Select your language of choice to structure a code snippet based on your specified arguments.",
+      "Language": "http",
+      "Code": "### lookup\n# @name Document_lookup\nGET {{host}}/v1/ingest/documents/{{id}}?n={{n}}\u0026filter={{filter}}\u0026sort=name\u0026sortOrder=asc\u0026status=queued\u0026nextToken={{nextToken}}\nX-API-Key: {{api_key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Look up success\n# Content-Type: application/json\n# 400\n# Description: Invalid process, bucket, group, or project ID\n# 401\n# Description: Unauthorized to access process, bucket, group, or project with given ID",
+      "Format": "http",
+      "OperationId": "Document_lookup",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "get",
+      "Slug": "health-get",
+      "Description": "Look up the current health status of a specific service. Statuses update every 5 minutes.",
+      "Language": "csharp",
+      "Code": "using var client = new GroundXClient(apiKey);\n\nvar response = await client.Health.HealthGetAsync(\n    service: \u0022search\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "Health_get",
+      "Setup": "This example assumes \u0060using GroundX;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    }
+  ]
+}
