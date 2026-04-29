@@ -125,7 +125,7 @@ namespace GroundX
                 PrepareHealthGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    service: service);
+                    service: service!);
 
                 return __httpRequest;
             }

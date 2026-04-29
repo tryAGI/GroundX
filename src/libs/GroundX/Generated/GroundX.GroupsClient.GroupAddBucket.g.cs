@@ -131,8 +131,8 @@ namespace GroundX
                 PrepareGroupAddBucketRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    groupId: groupId,
-                    bucketId: bucketId);
+                    groupId: groupId!,
+                    bucketId: bucketId!);
 
                 return __httpRequest;
             }

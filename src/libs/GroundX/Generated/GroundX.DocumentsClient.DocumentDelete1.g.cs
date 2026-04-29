@@ -126,7 +126,7 @@ namespace GroundX
                 PrepareDocumentDelete1Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    documentId: documentId);
+                    documentId: documentId!);
 
                 return __httpRequest;
             }

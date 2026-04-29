@@ -126,7 +126,7 @@ namespace GroundX
                 PrepareDocumentGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    documentId: documentId);
+                    documentId: documentId!);
 
                 return __httpRequest;
             }

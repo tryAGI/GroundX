@@ -126,7 +126,7 @@ namespace GroundX
                 PrepareDocumentGetProcessingStatusByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    processId: processId);
+                    processId: processId!);
 
                 return __httpRequest;
             }
