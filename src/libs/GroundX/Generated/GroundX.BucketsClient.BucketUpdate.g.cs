@@ -140,7 +140,7 @@ namespace GroundX
                 PrepareBucketUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    bucketId: bucketId,
+                    bucketId: bucketId!,
                     request: request);
 
                 return __httpRequest;

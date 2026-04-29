@@ -126,7 +126,7 @@ namespace GroundX
                 PrepareBucketDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    bucketId: bucketId);
+                    bucketId: bucketId!);
 
                 return __httpRequest;
             }

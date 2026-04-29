@@ -126,7 +126,7 @@ namespace GroundX
                 PrepareGroupDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    groupId: groupId);
+                    groupId: groupId!);
 
                 return __httpRequest;
             }

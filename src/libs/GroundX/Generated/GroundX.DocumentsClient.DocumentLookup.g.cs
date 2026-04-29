@@ -168,7 +168,7 @@ namespace GroundX
                 PrepareDocumentLookupRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
+                    id: id!,
                     n: n,
                     filter: filter,
                     sort: sort,

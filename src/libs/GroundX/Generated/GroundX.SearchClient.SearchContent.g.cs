@@ -165,7 +165,7 @@ namespace GroundX
                 PrepareSearchContentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
+                    id: id!,
                     n: n,
                     nextToken: nextToken,
                     verbosity: verbosity,
