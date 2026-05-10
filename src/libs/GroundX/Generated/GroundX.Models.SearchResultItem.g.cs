@@ -160,5 +160,6 @@ namespace GroundX
         public SearchResultItem()
         {
         }
+
     }
 }

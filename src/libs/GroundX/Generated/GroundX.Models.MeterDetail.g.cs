@@ -63,5 +63,6 @@ namespace GroundX
         public MeterDetail()
         {
         }
+
     }
 }

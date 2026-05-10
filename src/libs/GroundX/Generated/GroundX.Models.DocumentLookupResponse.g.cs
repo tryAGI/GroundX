@@ -79,5 +79,6 @@ namespace GroundX
         public DocumentLookupResponse()
         {
         }
+
     }
 }

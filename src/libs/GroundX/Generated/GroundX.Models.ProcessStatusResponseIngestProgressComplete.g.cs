@@ -48,5 +48,6 @@ namespace GroundX
         public ProcessStatusResponseIngestProgressComplete()
         {
         }
+
     }
 }

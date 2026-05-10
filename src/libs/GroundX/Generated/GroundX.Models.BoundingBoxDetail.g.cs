@@ -85,5 +85,6 @@ namespace GroundX
         public BoundingBoxDetail()
         {
         }
+
     }
 }
