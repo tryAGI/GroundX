@@ -51,5 +51,6 @@ namespace GroundX
         public IngestResponseIngest()
         {
         }
+
     }
 }

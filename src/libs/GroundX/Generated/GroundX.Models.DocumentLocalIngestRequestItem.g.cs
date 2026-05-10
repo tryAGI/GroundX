@@ -64,5 +64,6 @@ namespace GroundX
         public DocumentLocalIngestRequestItem()
         {
         }
+
     }
 }
