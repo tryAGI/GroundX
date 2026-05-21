@@ -52,5 +52,6 @@ namespace GroundX
         public SubscriptionDetailMeters()
         {
         }
+
     }
 }

@@ -147,5 +147,6 @@ namespace GroundX
         public DocumentDetail()
         {
         }
+
     }
 }

@@ -74,5 +74,6 @@ namespace GroundX
         public CustomerDetail()
         {
         }
+
     }
 }

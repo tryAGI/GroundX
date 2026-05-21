@@ -113,5 +113,6 @@ namespace GroundX
         public GroupDetail()
         {
         }
+
     }
 }

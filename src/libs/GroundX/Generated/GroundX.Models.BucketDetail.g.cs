@@ -102,5 +102,6 @@ namespace GroundX
         public BucketDetail()
         {
         }
+
     }
 }

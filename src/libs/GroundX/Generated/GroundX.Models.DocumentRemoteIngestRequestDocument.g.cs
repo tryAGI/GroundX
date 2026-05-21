@@ -100,5 +100,6 @@ namespace GroundX
         public DocumentRemoteIngestRequestDocument()
         {
         }
+
     }
 }

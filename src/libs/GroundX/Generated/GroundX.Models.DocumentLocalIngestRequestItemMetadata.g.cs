@@ -87,5 +87,6 @@ namespace GroundX
         public DocumentLocalIngestRequestItemMetadata()
         {
         }
+
     }
 }
