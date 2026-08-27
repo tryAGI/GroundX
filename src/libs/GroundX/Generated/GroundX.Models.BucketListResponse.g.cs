@@ -4,12 +4,12 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BucketListResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("buckets")]
         public global::System.Collections.Generic.IList<global::GroundX.BucketDetail>? Buckets { get; set; }

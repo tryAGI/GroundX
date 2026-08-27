@@ -4,7 +4,7 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DocumentRemoteIngestRequestDocument
     {

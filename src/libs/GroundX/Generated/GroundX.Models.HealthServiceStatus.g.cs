@@ -9,19 +9,19 @@ namespace GroundX
     public enum HealthServiceStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Degraded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Down,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Healthy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
     }

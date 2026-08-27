@@ -9,7 +9,7 @@ namespace GroundX
     public sealed partial class SubscriptionDetail
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("meters")]
         public global::GroundX.SubscriptionDetailMeters? Meters { get; set; }

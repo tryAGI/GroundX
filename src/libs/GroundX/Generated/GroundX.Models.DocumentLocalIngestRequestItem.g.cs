@@ -4,7 +4,7 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DocumentLocalIngestRequestItem
     {
@@ -23,7 +23,7 @@ namespace GroundX
         public required string Blobname { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
