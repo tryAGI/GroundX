@@ -4,30 +4,30 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProcessStatusResponseIngestProgress
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancelled")]
         public global::GroundX.ProcessStatusResponseIngestProgressCancelled? Cancelled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("complete")]
         public global::GroundX.ProcessStatusResponseIngestProgressComplete? Complete { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         public global::GroundX.ProcessStatusResponseIngestProgressErrors? Errors { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("processing")]
         public global::GroundX.ProcessStatusResponseIngestProgressProcessing? Processing { get; set; }

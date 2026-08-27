@@ -40,38 +40,38 @@ namespace GroundX
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BucketsClient Buckets { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomerClient Customer { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DocumentsClient Documents { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupsClient Groups { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HealthClient Health { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchClient Search { get; }
 

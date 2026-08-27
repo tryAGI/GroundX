@@ -17,7 +17,7 @@ namespace GroundX
         public int? Count { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
         public global::System.Collections.Generic.IList<global::GroundX.DocumentDetail>? Documents { get; set; }

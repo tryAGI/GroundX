@@ -4,12 +4,12 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class IngestResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ingest")]
         [global::System.Text.Json.Serialization.JsonRequired]

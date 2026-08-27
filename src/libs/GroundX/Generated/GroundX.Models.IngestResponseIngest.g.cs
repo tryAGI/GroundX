@@ -4,19 +4,19 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class IngestResponseIngest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("processId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid ProcessId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::GroundX.JsonConverters.ProcessingStatusJsonConverter))]

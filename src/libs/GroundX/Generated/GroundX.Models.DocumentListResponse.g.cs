@@ -4,18 +4,18 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DocumentListResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
         public global::System.Collections.Generic.IList<global::GroundX.DocumentDetail>? Documents { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nextToken")]
         public string? NextToken { get; set; }

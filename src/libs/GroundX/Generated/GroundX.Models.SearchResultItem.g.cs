@@ -4,7 +4,7 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SearchResultItem
     {
@@ -45,7 +45,7 @@ namespace GroundX
         public string? MultimodalUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pageImages")]
         public global::System.Collections.Generic.IList<string>? PageImages { get; set; }

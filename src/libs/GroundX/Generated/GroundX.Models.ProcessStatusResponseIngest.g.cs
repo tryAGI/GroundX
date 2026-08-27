@@ -4,25 +4,25 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProcessStatusResponseIngest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("processId")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid ProcessId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("progress")]
         public global::GroundX.ProcessStatusResponseIngestProgress? Progress { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::GroundX.JsonConverters.ProcessingStatusJsonConverter))]
@@ -30,7 +30,7 @@ namespace GroundX
         public required global::GroundX.ProcessingStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("statusMessage")]
         public string? StatusMessage { get; set; }

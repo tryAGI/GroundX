@@ -38,7 +38,7 @@ namespace GroundX
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::GroundX.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -48,7 +48,7 @@ namespace GroundX
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BucketsClient Buckets => new BucketsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -57,7 +57,7 @@ namespace GroundX
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CustomerClient Customer => new CustomerClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -66,7 +66,7 @@ namespace GroundX
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DocumentsClient Documents => new DocumentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -75,7 +75,7 @@ namespace GroundX
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupsClient Groups => new GroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -84,7 +84,7 @@ namespace GroundX
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HealthClient Health => new HealthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -93,7 +93,7 @@ namespace GroundX
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

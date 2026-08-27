@@ -4,12 +4,12 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class HealthResponseHealth
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("services")]
         [global::System.Text.Json.Serialization.JsonRequired]

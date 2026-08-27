@@ -9,11 +9,11 @@ namespace GroundX
     public enum Sort
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Created,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Name,
     }

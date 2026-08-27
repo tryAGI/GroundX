@@ -9,43 +9,43 @@ namespace GroundX
     public enum DocumentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Csv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Docx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Json,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pdf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pptx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tsv,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Txt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xlsx,
     }

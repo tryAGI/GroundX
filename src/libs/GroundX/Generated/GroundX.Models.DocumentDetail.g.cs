@@ -4,12 +4,12 @@
 namespace GroundX
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DocumentDetail
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bucketId")]
         public int? BucketId { get; set; }
@@ -22,7 +22,7 @@ namespace GroundX
         public required global::System.Guid DocumentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fileName")]
         public string? FileName { get; set; }
@@ -49,7 +49,7 @@ namespace GroundX
         public global::System.Guid? ProcessId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("searchData")]
         public object? SearchData { get; set; }
@@ -61,14 +61,14 @@ namespace GroundX
         public string? SourceUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::GroundX.JsonConverters.ProcessingStatusJsonConverter))]
         public global::GroundX.ProcessingStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("statusMessage")]
         public string? StatusMessage { get; set; }

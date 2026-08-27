@@ -20,7 +20,7 @@ namespace GroundX.JsonConverters
                     {
                         return global::GroundX.ProcessingStatusExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:
