@@ -157,8 +157,8 @@ namespace GroundX
                 PrepareGroupRemoveBucketRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    groupId: groupId!,
-                    bucketId: bucketId!);
+                    groupId: groupId,
+                    bucketId: bucketId);
 
                 return __httpRequest;
             }
@@ -180,7 +180,7 @@ namespace GroundX
                                 pathTemplate: "$\"/v1/group/{groupId}/bucket/{bucketId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -214,7 +214,7 @@ namespace GroundX
                                 pathTemplate: "$\"/v1/group/{groupId}/bucket/{bucketId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -255,7 +255,7 @@ namespace GroundX
                                 pathTemplate: "$\"/v1/group/{groupId}/bucket/{bucketId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -303,7 +303,7 @@ namespace GroundX
                                 pathTemplate: "$\"/v1/group/{groupId}/bucket/{bucketId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -325,7 +325,7 @@ namespace GroundX
                                 pathTemplate: "$\"/v1/group/{groupId}/bucket/{bucketId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

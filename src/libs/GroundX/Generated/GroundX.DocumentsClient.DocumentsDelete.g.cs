@@ -110,7 +110,7 @@ namespace GroundX
                                 path: "/v1/ingest/documents",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("documentIds", documentIds, selector: static x => x.ToString()!, delimiter: ",", explode: false)
+                                .AddRequiredParameter("documentIds", documentIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: false)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::GroundX.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -152,7 +152,7 @@ namespace GroundX
                 PrepareDocumentsDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    documentIds: documentIds!);
+                    documentIds: documentIds);
 
                 return __httpRequest;
             }
@@ -174,7 +174,7 @@ namespace GroundX
                                 pathTemplate: "\"/v1/ingest/documents\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -208,7 +208,7 @@ namespace GroundX
                                 pathTemplate: "\"/v1/ingest/documents\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -249,7 +249,7 @@ namespace GroundX
                                 pathTemplate: "\"/v1/ingest/documents\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -297,7 +297,7 @@ namespace GroundX
                                 pathTemplate: "\"/v1/ingest/documents\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -319,7 +319,7 @@ namespace GroundX
                                 pathTemplate: "\"/v1/ingest/documents\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
